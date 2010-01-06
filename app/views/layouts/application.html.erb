@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Title      : Emporium
+Version    : 1.0
+Released   : 20090222
+Description: A two-column, fixed-width and lightweight template ideal for 1024x768 resolutions. Suitable for blogs and small websites.
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>Emporium by Free Css Templates</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="/stylesheets/default.css" rel="stylesheet" type="text/css" />
+  <%= javascript_include_tag :all %>
+  <%= yield(:head) %>
+</head>
+<body>
+<div id="wrapper">
+<!-- start header -->
+<div id="logo">
+	<h1><a href="#">Emporium </a></h1>
+	<h2> &raquo;&nbsp;&nbsp;&nbsp;Design by Free Css Templates</h2>
+</div>
+<div id="header"><%= yield(:header) || render_or_default('header') %></div>
+<!-- end header -->
+</div>
+<!-- start page -->
+<div id="page">
+	<!-- start content -->
+	<div id="content"><%= yield %></div>
+	<!-- end content -->
+	<!-- start sidebar -->
+	<div id="sidebar"><%= yield(:sidebar) || render_or_default('sidebar') %></div>
+	<!-- end sidebar -->
+	<div style="clear: both;">&nbsp;</div>
+</div>
+<!-- end page -->
+<!-- start footer -->
+<div id="footer"><%= yield(:footer) || render_or_default('footer') %></div>
+<!-- end footer -->
+</body>
+</html>

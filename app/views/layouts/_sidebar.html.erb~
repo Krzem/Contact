@@ -1,0 +1,1 @@
+Jesteś z <%= @location.country_code %>

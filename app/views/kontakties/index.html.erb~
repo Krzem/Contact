@@ -1,0 +1,28 @@
+<h1>Listing kontakties</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Email</th>
+    <th>Www</th>
+    <th>Phone</th>
+  </tr>
+
+<% @kontakties.each do |kontakty| %>
+  <tr>
+    <td><%= gravatar_image_tag(kontakty.email, :alt => kontakty.name + " " + kontakty.surname, :gravatar => { :size => 15 }) %></td>
+    <td><%=h kontakty.name %></td>
+    <td><%=h kontakty.surname %></td>
+    <td><%=h kontakty.email %></td>
+    <td><%=h kontakty.www %></td>
+    <td><%=h kontakty.phone %></td>
+    <td><%= link_to 'Pokaż', kontakty %></td>
+    <td><%= link_to 'Edytuj', edit_kontakty_path(kontakty) %></td>
+    <td><%= link_to 'Usuń', kontakty, :confirm => 'Czy na pewno usunąć?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

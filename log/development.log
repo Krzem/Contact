@@ -1,0 +1,746 @@
+  [4;36;1mSQL (161.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (162.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (321.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (361.8ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (80.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (120.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20091124222514)
+  [4;36;1mSQL (161.6ms)[0m   [0;1mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091124222514')[0m
+  [4;36;1mSQL (120.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (80.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (41.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("posts")[0m
+  [4;36;1mSQL (162.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (41.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (41.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (41.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20091124222514)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (85.8ms)[0m   [0mDROP TABLE "posts"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20091124222514'[0m
+  [4;35;1mSQL (198.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (80.8ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (41.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (162.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (42.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20091124222514)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (43.1ms)[0m   [0mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091124222514')[0m
+Migrating to CreateKontakties (20091124224404)
+  [4;35;1mSQL (161.0ms)[0m   [0mCREATE TABLE "kontakties" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "surname" varchar(255), "email" varchar(255), "www" varchar(255), "phone" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091124224404')[0m
+  [4;35;1mSQL (120.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (120.8ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (120.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("kontakties")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("posts")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-25 11:38:26) [GET]
+
+ActionController::RoutingError (No route matches "/contacts" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 11:38:32) [GET]
+  [4;36;1mKontakty Load (204.9ms)[0m   [0;1mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Completed in 633ms (View: 416, DB: 205) | 200 OK [http://localhost/kontakties]
+
+
+Processing KontaktiesController#new (for 127.0.0.1 at 2009-11-25 11:38:44) [GET]
+Rendering template within layouts/kontakties
+Rendering kontakties/new
+Completed in 458ms (View: 174, DB: 0) | 200 OK [http://localhost/kontakties/new]
+
+
+Processing KontaktiesController#create (for 127.0.0.1 at 2009-11-25 11:39:00) [POST]
+  Parameters: {"commit"=>"Create", "kontakty"=>{"name"=>"Pawel", "www"=>"www.star.pl", "phone"=>"483724245", "surname"=>"Krzem", "email"=>"star@wp.pl"}, "authenticity_token"=>"qf/FqBuyYkOPVl6A/bnWfd2FMPORKYCe6wvARLtbX+E="}
+  [4;35;1mKontakty Create (45.1ms)[0m   [0mINSERT INTO "kontakties" ("name", "www", "created_at", "updated_at", "phone", "surname", "email") VALUES('Pawel', 'www.star.pl', '2009-11-25 10:39:00', '2009-11-25 10:39:00', '483724245', 'Krzem', 'star@wp.pl')[0m
+Redirected to http://localhost:3000/kontakties/1
+Completed in 349ms (DB: 45) | 302 Found [http://localhost/kontakties]
+
+
+Processing KontaktiesController#show (for 127.0.0.1 at 2009-11-25 11:39:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mKontakty Load (81.5ms)[0m   [0;1mSELECT * FROM "kontakties" WHERE ("kontakties"."id" = 1) [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/show
+Completed in 259ms (View: 12, DB: 82) | 200 OK [http://localhost/kontakties/1]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 11:39:13) [GET]
+  [4;35;1mKontakty Load (163.9ms)[0m   [0mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Completed in 374ms (View: 205, DB: 164) | 200 OK [http://localhost/kontakties]
+
+
+Processing KontaktiesController#show (for 127.0.0.1 at 2009-11-25 11:39:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mKontakty Load (119.5ms)[0m   [0;1mSELECT * FROM "kontakties" WHERE ("kontakties"."id" = 1) [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/show
+Completed in 332ms (View: 84, DB: 120) | 200 OK [http://localhost/kontakties/1]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 11:39:17) [GET]
+  [4;35;1mKontakty Load (123.6ms)[0m   [0mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Completed in 177ms (View: 9, DB: 124) | 200 OK [http://localhost/kontakties]
+
+
+Processing KontaktiesController#edit (for 127.0.0.1 at 2009-11-25 11:39:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mKontakty Load (119.6ms)[0m   [0;1mSELECT * FROM "kontakties" WHERE ("kontakties"."id" = 1) [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/edit
+Completed in 378ms (View: 131, DB: 120) | 200 OK [http://localhost/kontakties/1/edit]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 11:39:21) [GET]
+  [4;35;1mKontakty Load (122.3ms)[0m   [0mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Completed in 255ms (View: 88, DB: 122) | 200 OK [http://localhost/kontakties]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-11-25 11:39:27) [GET]
+  [4;36;1mPost Load (46.8ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 647ms (View: 262, DB: 47) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-11-25 11:39:29) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 174ms (View: 87, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-11-25 11:39:41) [POST]
+  Parameters: {"commit"=>"Create", "post"=>{"body"=>"Tresc pierwszego postu", "title"=>"Pierwszy post"}, "authenticity_token"=>"qf/FqBuyYkOPVl6A/bnWfd2FMPORKYCe6wvARLtbX+E="}
+  [4;35;1mPost Create (122.5ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "body", "updated_at") VALUES('2009-11-25 10:39:41', 'Pierwszy post', 'Tresc pierwszego postu', '2009-11-25 10:39:41')[0m
+Redirected to http://localhost:3000/posts/1
+Completed in 489ms (DB: 122) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-11-25 11:39:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (121.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 329ms (View: 85, DB: 121) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-11-25 11:39:45) [GET]
+  [4;35;1mPost Load (60.0ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 232ms (View: 86, DB: 60) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-11-25 11:39:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (160.9ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 485ms (View: 81, DB: 161) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-11-25 11:40:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (42.5ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 576ms (View: 335, DB: 43) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-11-25 11:40:41) [GET]
+  [4;35;1mPost Load (163.6ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 181ms (View: 12, DB: 164) | 200 OK [http://localhost/posts]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 12:34:21) [GET]
+  [4;36;1mKontakty Load (284.0ms)[0m   [0;1mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Completed in 928ms (View: 366, DB: 284) | 200 OK [http://localhost/kontakties]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 12:51:53) [GET]
+  [4;36;1mKontakty Load (206.7ms)[0m   [0;1mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Completed in 800ms (View: 213, DB: 207) | 200 OK [http://localhost/kontakties]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 12:54:05) [GET]
+  [4;35;1mKontakty Load (360.2ms)[0m   [0mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Completed in 507ms (View: 141, DB: 360) | 200 OK [http://localhost/kontakties]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-11-25 13:19:25) [GET]
+  [4;36;1mPost Load (178.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 322ms (View: 93, DB: 179) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-11-25 13:19:55) [GET]
+  [4;36;1mPost Load (73.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 217ms (View: 136, DB: 73) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-11-25 13:19:57) [GET]
+  [4;35;1mPost Load (7.8ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 156ms (View: 105, DB: 8) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (148.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (81.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20091124222514)
+Migrating to CreateKontakties (20091124224404)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (41.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (121.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("kontakties")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("posts")[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-11-25 13:21:22) [GET]
+  [4;36;1mPost Load (164.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 269ms (View: 68, DB: 164) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-11-25 13:21:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (3.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/posts
+Rendering posts/show
+Completed in 71ms (View: 15, DB: 3) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-11-25 13:21:26) [GET]
+  [4;36;1mPost Load (88.3ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 182ms (View: 85, DB: 88) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20091124222514)
+Migrating to CreateKontakties (20091124224404)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("kontakties")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("posts")[0m
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:08:24) [GET]
+  [4;36;1mKontakty Load (0.7ms)[0m   [0;1mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Completed in 210ms (View: 204, DB: 1) | 200 OK [http://localhost/kontakties]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:25:00) [GET]
+  [4;35;1mKontakty Load (0.6ms)[0m   [0mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Rendered layouts/_header (0.6ms)
+Rendered layouts/_sidebar (0.5ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 43ms (View: 37, DB: 1) | 200 OK [http://localhost/kontakties]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:25:03) [GET]
+  [4;36;1mKontakty Load (2.6ms)[0m   [0;1mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_sidebar (0.2ms)
+Rendered layouts/_footer (0.3ms)
+Completed in 45ms (View: 28, DB: 3) | 200 OK [http://localhost/kontakties]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:25:36) [GET]
+  [4;35;1mKontakty Load (1.4ms)[0m   [0mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_sidebar (0.2ms)
+Rendered layouts/_footer (0.2ms)
+Completed in 60ms (View: 42, DB: 1) | 200 OK [http://localhost/kontakties]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:25:48) [GET]
+  [4;36;1mKontakty Load (1.5ms)[0m   [0;1mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_sidebar (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 58ms (View: 42, DB: 1) | 200 OK [http://localhost/kontakties]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:27:47) [GET]
+  [4;35;1mKontakty Load (0.6ms)[0m   [0mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_sidebar (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 79ms (View: 17, DB: 1) | 200 OK [http://localhost/kontakties]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:28:07) [GET]
+  [4;36;1mKontakty Load (0.7ms)[0m   [0;1mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_sidebar (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 25ms (View: 18, DB: 1) | 200 OK [http://localhost/kontakties]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:32:18) [GET]
+  [4;35;1mKontakty Load (1.4ms)[0m   [0mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+
+ActionView::TemplateError (undefined local variable or method `new_kontakt_path' for #<ActionView::Base:0xb5fc7b54>) on line #4 of app/views/layouts/_header.html.erb:
+1: <div id="menu">
+2: 		<ul>
+3: 			<li class="current_page_item"><%= link_to 'Kontakty', kontakties_path %></li>
+4: 			<li><%= link_to 'Nowy kontakt', new_kontakt_path %></li>
+5: 		</ul>
+6: 	</div>
+
+    app/views/layouts/_header.html.erb:4
+    app/helpers/template_helper.rb:6:in `render_or_default'
+    app/views/layouts/kontakties.html.erb:17
+    app/controllers/kontakties_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (140.8ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:33:44) [GET]
+  [4;36;1mKontakty Load (0.7ms)[0m   [0;1mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Rendered layouts/_header (1.0ms)
+Rendered layouts/_sidebar (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 26ms (View: 18, DB: 1) | 200 OK [http://localhost/kontakties]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:34:06) [GET]
+  [4;35;1mKontakty Load (0.6ms)[0m   [0mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Rendered layouts/_header (0.3ms)
+Rendered layouts/_sidebar (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/kontakties]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:34:08) [GET]
+  [4;36;1mKontakty Load (0.6ms)[0m   [0;1mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Rendered layouts/_header (0.3ms)
+Rendered layouts/_sidebar (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/kontakties]
+
+
+Processing KontaktiesController#new (for 127.0.0.1 at 2009-11-25 22:34:09) [GET]
+Rendering template within layouts/kontakties
+Rendering kontakties/new
+Rendered layouts/_header (0.3ms)
+Rendered layouts/_sidebar (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 24ms (View: 14, DB: 0) | 200 OK [http://localhost/kontakties/new]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:34:11) [GET]
+  [4;35;1mKontakty Load (1.5ms)[0m   [0mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Rendered layouts/_header (0.8ms)
+Rendered layouts/_sidebar (0.2ms)
+Rendered layouts/_footer (0.2ms)
+Completed in 45ms (View: 29, DB: 1) | 200 OK [http://localhost/kontakties]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:34:57) [GET]
+  [4;36;1mKontakty Load (1.5ms)[0m   [0;1mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Rendered layouts/_header (0.4ms)
+Rendered layouts/_sidebar (0.1ms)
+Rendered layouts/_footer (0.3ms)
+Completed in 45ms (View: 27, DB: 1) | 200 OK [http://localhost/kontakties]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:35:18) [GET]
+  [4;35;1mKontakty Load (1.4ms)[0m   [0mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Rendered layouts/_header (0.9ms)
+Rendered layouts/_sidebar (0.2ms)
+Rendered layouts/_footer (0.2ms)
+Completed in 62ms (View: 44, DB: 1) | 200 OK [http://localhost/kontakties]
+
+
+Processing KontaktiesController#new (for 127.0.0.1 at 2009-11-25 22:35:38) [GET]
+Rendering template within layouts/kontakties
+Rendering kontakties/new
+Rendered layouts/_header (0.8ms)
+Rendered layouts/_sidebar (0.2ms)
+Rendered layouts/_footer (0.2ms)
+Completed in 45ms (View: 26, DB: 0) | 200 OK [http://localhost/kontakties/new]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:35:39) [GET]
+  [4;36;1mKontakty Load (1.4ms)[0m   [0;1mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Rendered layouts/_header (0.3ms)
+Rendered layouts/_sidebar (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 50ms (View: 33, DB: 1) | 200 OK [http://localhost/kontakties]
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:41:21) [GET]
+  [4;35;1mKontakty Load (1.5ms)[0m   [0mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+
+ActionView::TemplateError (undefined method `gravatar_image_tag' for #<ActionView::Base:0xb5f318fc>) on line #15 of app/views/kontakties/index.html.erb:
+12: 
+13: <% @kontakties.each do |kontakty| %>
+14:   <tr>
+15:     <td><%= gravatar_image_tag(kontakty.email, :alt => kontakty.name + " " + kontakty.surname, :gravatar => { :size => 15 }) %></td>
+16:     <td><%=h kontakty.name %></td>
+17:     <td><%=h kontakty.surname %></td>
+18:     <td><%=h kontakty.email %></td>
+
+    app/views/kontakties/index.html.erb:15
+    app/views/kontakties/index.html.erb:13:in `each'
+    app/views/kontakties/index.html.erb:13
+    app/controllers/kontakties_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (105.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:41:39) [GET]
+  [4;36;1mKontakty Load (0.7ms)[0m   [0;1mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Rendered layouts/_header (0.9ms)
+Rendered layouts/_sidebar (0.5ms)
+Rendered layouts/_footer (0.5ms)
+Completed in 101ms (View: 95, DB: 1) | 200 OK [http://localhost/kontakties]
+WARNING: geokit-rails requires the Geokit gem. You either don't have the gem installed,
+or you haven't told Rails to require it. If you're using a recent version of Rails: 
+  config.gem "geokit" # in config/environment.rb
+and of course install the gem: sudo gem install geokit
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:49:00) [GET]
+
+NameError (uninitialized constant KontaktiesController::Geokit):
+  app/controllers/kontakties_controller.rb:88:in `geolocation'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (79.7ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+WARNING: geokit-rails requires the Geokit gem. You either don't have the gem installed,
+or you haven't told Rails to require it. If you're using a recent version of Rails: 
+  config.gem "geokit" # in config/environment.rb
+and of course install the gem: sudo gem install geokit
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:49:56) [GET]
+
+NameError (uninitialized constant KontaktiesController::Geokit):
+  app/controllers/kontakties_controller.rb:88:in `geolocation'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (87.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:49:57) [GET]
+
+NameError (uninitialized constant KontaktiesController::Geokit):
+  app/controllers/kontakties_controller.rb:88:in `geolocation'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:49:58) [GET]
+
+NameError (uninitialized constant KontaktiesController::Geokit):
+  app/controllers/kontakties_controller.rb:88:in `geolocation'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (37.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+WARNING: geokit-rails requires the Geokit gem. You either don't have the gem installed,
+or you haven't told Rails to require it. If you're using a recent version of Rails: 
+  config.gem "geokit" # in config/environment.rb
+and of course install the gem: sudo gem install geokit
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:50:18) [GET]
+
+NameError (uninitialized constant KontaktiesController::Geokit):
+  app/controllers/kontakties_controller.rb:88:in `geolocation'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (79.2ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:50:19) [GET]
+
+NameError (uninitialized constant KontaktiesController::Geokit):
+  app/controllers/kontakties_controller.rb:88:in `geolocation'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (96.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:50:19) [GET]
+
+NameError (uninitialized constant KontaktiesController::Geokit):
+  app/controllers/kontakties_controller.rb:88:in `geolocation'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (53.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:50:19) [GET]
+
+NameError (uninitialized constant KontaktiesController::Geokit):
+  app/controllers/kontakties_controller.rb:88:in `geolocation'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:50:20) [GET]
+
+NameError (uninitialized constant KontaktiesController::Geokit):
+  app/controllers/kontakties_controller.rb:88:in `geolocation'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+WARNING: geokit-rails requires the Geokit gem. You either don't have the gem installed,
+or you haven't told Rails to require it. If you're using a recent version of Rails: 
+  config.gem "geokit" # in config/environment.rb
+and of course install the gem: sudo gem install geokit
+
+
+Processing KontaktiesController#index (for 127.0.0.1 at 2009-11-25 22:52:53) [GET]
+  [4;36;1mKontakty Load (1.8ms)[0m   [0;1mSELECT * FROM "kontakties" [0m
+Rendering template within layouts/kontakties
+Rendering kontakties/index
+Rendered layouts/_header (1.1ms)
+Rendered layouts/_sidebar (0.5ms)
+Rendered layouts/_footer (0.6ms)
+Completed in 3496ms (View: 93, DB: 2) | 200 OK [http://localhost/kontakties]
